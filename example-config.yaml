@@ -1,0 +1,12 @@
+# Merge into the intended profile's config.yaml after reviewing these placeholders.
+plugins:
+  isolation: in_process
+  entries:
+    button-actions:
+      settings:
+        timeout_seconds: 10
+        integrations:
+          - module: .integrations.demo
+            options:
+              chat_id: "REPLACE_WITH_CHAT_ID"
+              thread_id: null # No topic only; replace with a quoted topic ID for a forum topic.

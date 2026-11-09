@@ -1,0 +1,21 @@
+name: button-actions
+manifest_version: 2
+version: 0.2.0
+description: Scoped Telegram button actions with explicitly configured integrations
+author: Tarkil and contributors
+license: MIT
+homepage: https://github.com/tarkilhk/hermes-button-actions
+kind: standalone
+requires_hermes: ">=0.23.0"
+tags: [telegram, callbacks, integrations]
+# Native handler factories do not use a capability-gated ctx platform action API.
+capabilities: []
+config_schema:
+  timeout_seconds:
+    type: number
+    default: 10
+    description: Positive finite deadline for one integration action, in seconds.
+  integrations:
+    type: list
+    default: []
+    description: Trusted Python modules; each entry has module and optional options mapping. See docs/integrations.md.

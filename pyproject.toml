@@ -1,0 +1,33 @@
+[project]
+name = "hermes-button-actions"
+version = "0.2.0"
+description = "Scoped Telegram callback buttons for trusted Hermes integrations"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Tarkil and contributors"}]
+keywords = ["hermes", "telegram", "plugins", "callbacks"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/tarkilhk/hermes-button-actions"
+Repository = "https://github.com/tarkilhk/hermes-button-actions"
+Issues = "https://github.com/tarkilhk/hermes-button-actions/issues"
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "python-telegram-bot==22.8"]
+integration-test = [
+    "ruamel.yaml==0.18.16", "PyYAML>=6,<7", "python-dotenv>=1,<2",
+    "requests>=2.33.1,<3", "rich>=13,<16", "platformdirs>=4,<5", "packaging>=24,<27",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["button_actions*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
